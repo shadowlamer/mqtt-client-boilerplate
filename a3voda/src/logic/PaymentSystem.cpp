@@ -19,6 +19,8 @@ void PaymentSystem::processAction(Serializable *s) {
         Payment incomingPayment(*s);
         double amount = incomingPayment.getAmount();
         double remain = processPayment(amount);
+        if (remain < 0)
+            incomingPayment.setAmount(PAYMENT_CANCELLED);
         incomingPayment.setRemain(remain);
         mqtt.publish(LOCAL_RESPONSE_TOPIC, incomingPayment);
     }
