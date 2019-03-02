@@ -18,7 +18,9 @@ MQTTTask::MQTTTask():
 void MQTTTask::runTask() {
     mosqpp::lib_init();
     try {
-        while (!sleep(200)) {}
+        while (!sleep(200)) {
+            paymentSystem.loop();
+        }
     } catch (exception& e) {
         cerr << e.what() << endl;
         Poco::Process::requestTermination(Poco::Process::id());

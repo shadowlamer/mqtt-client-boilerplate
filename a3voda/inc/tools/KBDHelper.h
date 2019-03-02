@@ -52,6 +52,7 @@ private:
             {9+0x100, KBD_REGISTER}, //"8" with shift
             {96, KBD_ENTER},         //Num section "Enter"
             {4+0x100, KBD_ENTER},    //"3" with shift
+            {115, KBD_ENTER},        //power key
             {14, KBD_BKSPACE}
     };
     string buf = "";

@@ -6,12 +6,20 @@
 #define MQTT_CLIENT_BOILERPLATE_DEMOPAYMENTSYSTEM_H
 
 #include <logic/PaymentSystem.h>
+#include <logic/StateMachine.h>
+#include <tools/KBDHelper.h>
+#include <tools/Utf8ToCp1251Converter.h>
 
-class MyPaymentSystem : public PaymentSystem {
+class MyPaymentSystem : public PaymentSystem, public StateMachine {
 public:
     MyPaymentSystem(MQTTWrapper &mqtt);
     bool checkPresence() override;
     double processPayment(double amount) override;
+    double processDeposite(double amount) override;
+    void loop() override;
+private:
+    KBDHelper kbd;
+    double credit = 100;
 };
 
 #endif //MQTT_CLIENT_BOILERPLATE_DEMOPAYMENTSYSTEM_H
