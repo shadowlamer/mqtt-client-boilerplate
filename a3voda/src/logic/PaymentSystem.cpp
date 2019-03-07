@@ -26,8 +26,10 @@ void PaymentSystem::processAction(Serializable *s) {
             mqtt.publish(LOCAL_RESPONSE_TOPIC, incomingPayment);
         } else {
             double remain = processDeposite(amount);
-            incomingPayment.setRemain(remain);
-            mqtt.publish(LOCAL_DEPOSITE_TOPIC, incomingPayment);
+            if (remain >= 0) { //publish deposite only if remain balance positive
+                incomingPayment.setRemain(remain);
+                mqtt.publish(LOCAL_DEPOSITE_TOPIC, incomingPayment);
+            }
         }
     }
 }
