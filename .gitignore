@@ -51,6 +51,7 @@ compile_commands.json
 CTestTestfile.cmake
 build
 _CPack_Packages
+/*.cmake
 
 # generated directories
 bin/
