@@ -1,4 +1,4 @@
-#include <tools/KBDHelper.h>
+#include <KBDHelper.h>
 
 int fd;
 struct input_event ev;

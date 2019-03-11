@@ -2,7 +2,7 @@
 // Created by sl on 28.02.2019.
 //
 
-#include <logic/PaymentSystem.h>
+#include <PaymentSystem.h>
 
 void PaymentSystem::processAction(Serializable *s) {
     if (s->name() == LOCAL_REQUEST_TOPIC) {

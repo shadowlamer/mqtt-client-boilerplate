@@ -6,9 +6,9 @@
 #define MQTT_CIVIL_CLIENT_UTF8TOCP1251CONVERTER_H
 
 #include <iostream>
-#include "Poco/UTF8Encoding.h"
-#include <tools/Windows1251Encoding.h>
-#include "Poco/TextConverter.h"
+#include <Poco/UTF8Encoding.h>
+#include <Windows1251Encoding.h>
+#include <Poco/TextConverter.h>
 
 using namespace std;
 using namespace Poco;

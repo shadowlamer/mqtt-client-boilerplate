@@ -1,5 +1,5 @@
 ///
-#include <domain/Payment.h>
+#include <Payment.h>
 
 Payment::Payment(string json) : Serializable(json) {}
 

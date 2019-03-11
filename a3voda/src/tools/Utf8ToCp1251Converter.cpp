@@ -2,7 +2,7 @@
 // Created by sl on 27.02.2019.
 //
 
-#include <tools/Utf8ToCp1251Converter.h>
+#include <Utf8ToCp1251Converter.h>
 
 static UTF8Encoding utf8Encoding;
 static Windows1251Encoding windows1251Encoding;

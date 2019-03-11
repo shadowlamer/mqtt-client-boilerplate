@@ -19,6 +19,7 @@
 *.so
 *.dylib
 *.dll
+*.so.*
 
 # Fortran module files
 *.mod
@@ -35,6 +36,9 @@
 *.out
 *.app
 
+# Packages
+*.deb
+
 ### CMake ###
 CMakeCache.txt
 CMakeFiles
@@ -46,16 +50,19 @@ install_manifest.txt
 compile_commands.json
 CTestTestfile.cmake
 build
+_CPack_Packages
 
 # generated directories
 bin/
 obj/
 
-#CLion
+# CLion
 .idea
 cmake-build-debug
 cmake-build-release
 
-mqtt-client-boilerplate
+# Target
+mqtt-client-demo
+
 
 # End of https://www.gitignore.io/api/c++,cmake

@@ -1,7 +1,7 @@
 #pragma once
 
 #include <iostream>
-#include "domain/Serializable.h"
+#include <Serializable.h>
 
 #define PAYMENT_OK 0.0
 #define PAYMENT_CANCELLED -1.0

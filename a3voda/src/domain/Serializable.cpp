@@ -2,9 +2,7 @@
 // Created by sl on 13.02.2019.
 //
 
-#include <domain/Serializable.h>
-
-#include "domain/Serializable.h"
+#include <Serializable.h>
 #include <iostream>
 
 Serializable::Serializable(string json) : Document() {

@@ -12,8 +12,8 @@
 //
 
 
-#include <tools/Windows1251Encoding.h>
-#include "Poco/String.h"
+#include <Windows1251Encoding.h>
+#include <Poco/String.h>
 
 
 namespace Poco {

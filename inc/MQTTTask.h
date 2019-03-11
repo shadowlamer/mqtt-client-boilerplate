@@ -8,7 +8,7 @@
 
 #include <mosquittopp.h>
 #include <Server.h>
-#include <mqtt/MQTTWrapper.h>
+#include <MQTTWrapper.h>
 #include <Main.h>
 #include <MyPaymentSystem.h>
 

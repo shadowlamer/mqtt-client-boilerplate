@@ -6,10 +6,10 @@
 #include <stdio.h>
 #include <iostream>
 
-#include <tools/KBDHelper.h>
+#include <KBDHelper.h>
 
 #include <Poco/NotificationCenter.h>
-#include <domain/ActionListener.h>
+#include <ActionListener.h>
 
 using namespace std;
 using namespace Poco;

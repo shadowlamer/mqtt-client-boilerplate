@@ -5,7 +5,7 @@
 #ifndef MQTT_CLIENT_ACTIONLISTENER_H
 #define MQTT_CLIENT_ACTIONLISTENER_H
 
-#include <domain/Serializable.h>
+#include <Serializable.h>
 
 class ActionListener {
 public:

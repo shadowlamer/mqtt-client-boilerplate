@@ -2,7 +2,7 @@
 // Created by sl on 21.02.2019.
 //
 
-#include <tools/LcdHelper.h>
+#include <LcdHelper.h>
 
 string LcdHelper::mask(string msg, unsigned char mask) {
     string res="";

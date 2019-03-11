@@ -5,9 +5,9 @@
 #ifndef MQTT_CLIENT_BOILERPLATE_PAYMENTSYSTEM_H
 #define MQTT_CLIENT_BOILERPLATE_PAYMENTSYSTEM_H
 
-#include <domain/ActionListener.h>
-#include <domain/Payment.h>
-#include <mqtt/MQTTWrapper.h>
+#include <ActionListener.h>
+#include <Payment.h>
+#include <MQTTWrapper.h>
 
 #define LOCAL_REQUEST_TOPIC   "local/pay/request"
 #define LOCAL_RESPONSE_TOPIC  "local/pay/response"

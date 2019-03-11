@@ -5,10 +5,10 @@
 #ifndef MQTT_CLIENT_BOILERPLATE_DEMOPAYMENTSYSTEM_H
 #define MQTT_CLIENT_BOILERPLATE_DEMOPAYMENTSYSTEM_H
 
-#include <logic/PaymentSystem.h>
-#include <logic/StateMachine.h>
-#include <tools/KBDHelper.h>
-#include <tools/Utf8ToCp1251Converter.h>
+#include <PaymentSystem.h>
+#include <StateMachine.h>
+#include <KBDHelper.h>
+#include <Utf8ToCp1251Converter.h>
 
 class MyPaymentSystem : public PaymentSystem, public StateMachine {
 public:

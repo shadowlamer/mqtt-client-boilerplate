@@ -2,7 +2,7 @@
 // Created by sl on 19.02.2019.
 //
 
-#include <logic/StateMachine.h>
+#include <StateMachine.h>
 
 long savedTime;
 

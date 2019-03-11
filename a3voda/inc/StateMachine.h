@@ -5,7 +5,7 @@
 #ifndef MQTT_CLIENT_STATEMACHINE_H
 #define MQTT_CLIENT_STATEMACHINE_H
 
-#include <domain/ActionListener.h>
+#include <ActionListener.h>
 #include <chrono>
 using namespace std::chrono;
 
