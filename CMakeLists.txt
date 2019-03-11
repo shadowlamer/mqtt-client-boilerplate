@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.0)
 
+message("Processor: ${CMAKE_SYSTEM_PROCESSOR}")
+
 set(DEMO_TARGET mqtt-client-demo)
 set(LIB_TARGET a3voda)
 set(LIB_VERSION "0.0.1")
@@ -38,13 +40,21 @@ install(TARGETS ${LIB_TARGET}
     PUBLIC_HEADER DESTINATION include/a3voda
 )
 
+if (NOT DEFINED PACKAGE_ARCHITECTURE)
+execute_process (
+    COMMAND dpkg --print-architecture
+    OUTPUT_VARIABLE PACKAGE_ARCHITECTURE 
+    OUTPUT_STRIP_TRAILING_WHITESPACE
+)
+endif()
+
 set(CPACK_GENERATOR "DEB")
 set(CPACK_PACKAGE_NAME "${LIB_TARGET}-dev")
 set(CPACK_PACKAGE_VERSION "${LIB_VERSION}")
-set(CPACK_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}_${CPACK_PACKAGE_VERSION}_${CMAKE_SYSTEM_PROCESSOR}")
+set(CPACK_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}_${CPACK_PACKAGE_VERSION}_${PACKAGE_ARCHITECTURE}")
 set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Vadim Cherenev <sl@anhot.ru>")
 set(CPACK_DEBIAN_PACKAGE_DESCRIPTION "Functions for interfacing with 3voda vending machines. Visit https://3voda.ru")
-set(CPACK_DEBIAN_PACKAGE_DEPENDS "libpoco-dev:${CMAKE_SYSTEM_PROCESSOR},libmosquitto-dev:${CMAKE_SYSTEM_PROCESSOR},libmosquittopp-dev:${CMAKE_SYSTEM_PROCESSOR},rapidjson-dev")
+set(CPACK_DEBIAN_PACKAGE_DEPENDS "libpoco-dev:${PACKAGE_ARCHITECTURE},libmosquitto-dev:${PACKAGE_ARCHITECTURE},libmosquittopp-dev:${PACKAGE_ARCHITECTURE},rapidjson-dev")
 set(CPACK_PACKAGING_INSTALL_PREFIX "usr")
 
 include(CPack)
