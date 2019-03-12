@@ -4,6 +4,7 @@
 
 #include <linux/input.h>
 #include <sys/types.h>
+#include <dirent.h>
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <stdio.h>
@@ -18,6 +19,8 @@
 #define KBD_REGISTER 'R'
 
 #define MAX_INPUT_SIZE 16
+
+#define INPUT_DEV_DIRECTORY "/dev/input/"
 
 using namespace std;
 
@@ -64,6 +67,7 @@ public:
     bool inputString(string &str, unsigned int maxSize = MAX_INPUT_SIZE);
     bool checkSpecial(char special);
     void flush();
+    static string findDeviceByName(const string &devname);
 
 private:
     bool shift = false;

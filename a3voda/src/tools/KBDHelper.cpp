@@ -27,9 +27,9 @@ string KBDHelper::getDigit() {
     buf = "";
     while (poll(&fds, 1, 1) >0 ){
         ssize_t r = read(fd, &ev, sizeof(struct input_event));
-        if (ev.type == 1 && ev.code == 42) //left shift
+        if (ev.type == EV_KEY && ev.code == KEY_LEFTSHIFT)
             shift = (ev.value != 0);
-        else if(r > 0 && ev.type == 1 && ev.value == 0) {
+        else if(r > 0 && ev.type == EV_KEY && ev.value == 0) {
             __u16 scancode = ev.code;
             if (shift) scancode += 0x100;
             auto foundKeycodes = keymap.find(scancode);
@@ -65,4 +65,19 @@ bool KBDHelper::inputString(string &str, unsigned int maxSize) {
 
 bool KBDHelper::checkSpecial(char special) {
     return buf.find(special) != string::npos;
+}
+
+string KBDHelper::findDeviceByName(const string &devname) {
+    char buf[512];
+    DIR* dirp = opendir(INPUT_DEV_DIRECTORY);
+    struct dirent * dp;
+    while ((dp = readdir(dirp)) != NULL) {
+        string name(string(INPUT_DEV_DIRECTORY) + string(dp->d_name));
+        fd = open(name.c_str(), O_RDONLY);
+        ioctl(fd, EVIOCGNAME(sizeof(buf)), buf);
+        close(fd);
+        if (devname.compare(buf) == 0) return name;
+    }
+    closedir(dirp);
+    return "";
 }

@@ -4,7 +4,8 @@
 
 #include <MyPaymentSystem.h>
 
-MyPaymentSystem::MyPaymentSystem(MQTTWrapper &mqtt) : PaymentSystem(mqtt), kbd("/dev/input/event1") {}
+MyPaymentSystem::MyPaymentSystem(MQTTWrapper &mqtt) : PaymentSystem(mqtt),
+    kbd(KBDHelper::findDeviceByName("sunxi-keyboard")) {}
 
 /**
  * Checks payment system availability
