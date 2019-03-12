@@ -28,7 +28,9 @@ double MyPaymentSystem::processPayment(double amount) {
     } else {
         //You can show additional messages on terminal LCD.
         //They will be shown after system messages.
-        alert(Utf8ToCp1251Converter::utfToCp(" YOU DON'T HAVE ""  ENOUGH MONEY  "));
+        alert(Utf8ToCp1251Converter::utfToCp(" YOU DON'T HAVE "    //  two
+                                             "  ENOUGH MONEY  ")); //  lines
+//                                           |<-- 16 chars -->|
         cerr << "Not enough money" << endl;
     }
     return remain;
