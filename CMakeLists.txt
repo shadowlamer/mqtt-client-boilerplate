@@ -55,6 +55,7 @@ set(CPACK_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}_${CPACK_PACKAGE_VERSION}_${PA
 set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Vadim Cherenev <sl@anhot.ru>")
 set(CPACK_DEBIAN_PACKAGE_DESCRIPTION "Functions for interfacing with 3voda vending machines. Visit https://3voda.ru")
 set(CPACK_DEBIAN_PACKAGE_DEPENDS "libpoco-dev:${PACKAGE_ARCHITECTURE},libmosquitto-dev:${PACKAGE_ARCHITECTURE},libmosquittopp-dev:${PACKAGE_ARCHITECTURE},rapidjson-dev")
+set(CPACK_DEBIAN_PACKAGE_ARCHITECTURE "${PACKAGE_ARCHITECTURE}")
 set(CPACK_PACKAGING_INSTALL_PREFIX "usr")
 
 include(CPack)
