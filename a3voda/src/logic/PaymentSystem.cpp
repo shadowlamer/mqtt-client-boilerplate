@@ -9,9 +9,6 @@ void PaymentSystem::processAction(Serializable *s) {
         if (checkPresence()) {
             Payment paymentOk(PAYMENT_OK);
             mqtt.publish(LOCAL_RESPONSE_TOPIC, paymentOk);
-        } else {
-            Payment paymentFail(PAYMENT_CANCELLED);
-            mqtt.publish(LOCAL_RESPONSE_TOPIC, paymentFail);
         }
     }
 
