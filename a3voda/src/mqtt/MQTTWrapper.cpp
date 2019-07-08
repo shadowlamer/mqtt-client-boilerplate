@@ -42,7 +42,7 @@ void MQTTWrapper::on_connect(int rc) {
 }
 
 void MQTTWrapper::publish(string topic, string message) {
-    mosquittopp::publish(&midSale, topic.c_str(), message.size(), message.c_str());
+    mosquittopp::publish(&midSale, topic.c_str(), message.size(), message.c_str(), QOS);
 }
 
 void MQTTWrapper::publish(string topic, Serializable entity) {
