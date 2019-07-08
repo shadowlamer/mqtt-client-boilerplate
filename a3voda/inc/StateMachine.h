@@ -19,6 +19,7 @@ public:
     bool isState(int state);
     virtual void loop() = 0;
     bool expired();
+    void refreshInterval();
 };
 
 #endif //MQTT_CLIENT_STATEMACHINE_H

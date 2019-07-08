@@ -32,3 +32,7 @@ int StateMachine::getState() {
 bool StateMachine::isState(int requestedState) {
     return state == requestedState;
 }
+
+void StateMachine::refreshInterval() {
+    savedTime = now();
+}
