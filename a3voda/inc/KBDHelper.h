@@ -1,3 +1,10 @@
+/**
+ * @file KBDHelper.h
+ * @brief Заголовочный файл для класса KBDHelper.
+ * @author Vadim Cherenev
+ * @date 21.02.2019
+ * @copyright MIT License
+ */
 
 #ifndef MQTT_CLIENT_KBDHELPER_H
 #define MQTT_CLIENT_KBDHELPER_H
@@ -18,12 +25,22 @@
 #define KBD_BKSPACE 'B'
 #define KBD_REGISTER 'R'
 
+/**
+ * @brief Максимальная длина вводимой строки.
+ */
 #define MAX_INPUT_SIZE 16
 
+/**
+ * @brief Каталог для поиска файлов устройств.
+ */
 #define INPUT_DEV_DIRECTORY "/dev/input/"
 
 using namespace std;
 
+/**
+ * @class KBDHelper KBDHelper.h
+ * @brief Содержит методы для опроса клавиатуры (числовой секции).
+ */
 class KBDHelper {
 private:
     map <__u16 , char> keymap = {

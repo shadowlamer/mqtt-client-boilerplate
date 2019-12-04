@@ -1,6 +1,10 @@
-//
-// Created by sl on 28.02.2019.
-//
+/**
+ * @file MyPaymentSystem.h
+ * @brief Header file for MyPaymentSystem.
+ * @author Vadim Cherenev
+ * @date 28.02.2019
+ * @copyright MIT License
+ */
 
 #ifndef MQTT_CLIENT_BOILERPLATE_DEMOPAYMENTSYSTEM_H
 #define MQTT_CLIENT_BOILERPLATE_DEMOPAYMENTSYSTEM_H

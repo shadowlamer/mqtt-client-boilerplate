@@ -1,18 +1,46 @@
+/**
+ * @file Payment.h
+ * @brief Заголовочный файл для класса Payment.
+ * @author Vadim Cherenev
+ * @date 21.02.2019
+ * @copyright MIT License
+ */
+
 #pragma once
 
 #include <iostream>
 #include <Serializable.h>
 
+/**
+ * Результат операции: операция прошла успешно.
+ */
 #define PAYMENT_OK 0.0
+/**
+ * Результат операции: операция отклонена.
+ */
 #define PAYMENT_CANCELLED -1.0
 
-enum {
- PT_CASH = 0,
- PT_CARD
-};
-
+/**
+ * @class Payment Payment.h
+ * @brief Доменная сущность. Описывает операцию "Продажа".
+ *   - Аттрибуты сущности:
+ *     -# double amount,
+ *     -# int paymentType,
+ *     -# double remain,
+ *     -# double price,
+ *     -# double quantity
+ */
 class Payment : public Serializable {
 public:
+    /**
+     * @enum PaymentType
+     * @brief Тип платежа.
+     */
+    enum PaymentType {
+        PT_CASH = 0,  /**< Платеж наличными */
+        PT_CARD       /**< Безналичный платеж */
+    };
+
     Payment();
     explicit Payment(string json);
     explicit Payment(Serializable &s);

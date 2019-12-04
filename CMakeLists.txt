@@ -21,6 +21,7 @@ find_package (Poco REQUIRED Net Util)
 find_package (Mosquitto REQUIRED)
 find_package (Mosquittopp REQUIRED)
 find_package (rapidjson REQUIRED)
+find_package (Doxygen)
 
 include_directories(${Poco_INCLUDE_DIRS} ${MOSQUITTO_INCLUDE_DIR} ${MOSQUITTOPP_INCLUDE_DIR} ${RAPIDJSON_INCLUDE_DIRS})
 link_libraries (${CMAKE_THREAD_LIBS_INIT} ${Poco_LIBRARIES} ${MOSQUITTO_LIBRARIES} ${MOSQUITTOPP_LIBRARIES})
@@ -76,3 +77,22 @@ include(CPack)
 
 enable_testing()
 add_test(NAME MyAwesomeTest COMMAND a3voda-test)
+
+if (DOXYGEN_FOUND)
+    # set input and output files
+    set(DOXYGEN_IN ${CMAKE_SOURCE_DIR}/docs/Doxyfile.in)
+    set(DOXYGEN_OUT ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile)
+
+    # request to configure the file
+    configure_file(${DOXYGEN_IN} ${DOXYGEN_OUT} @ONLY)
+    message("Doxygen build started")
+
+    # note the option ALL which allows to build the docs together with the application
+    add_custom_target( doc_doxygen
+            COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYGEN_OUT}
+            WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+            COMMENT "Generating API documentation with Doxygen"
+            VERBATIM )
+else (DOXYGEN_FOUND)
+    message("Doxygen need to be installed to generate the doxygen documentation")
+endif (DOXYGEN_FOUND)

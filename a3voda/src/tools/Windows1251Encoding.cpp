@@ -11,6 +11,12 @@
 // SPDX-License-Identifier:	BSL-1.0
 //
 
+/**
+ * @file Windows1251Encoding.cpp
+ * @brief Реализация класса Poco::Windows1251Encoding
+ * Скопировано из библиотеки POCO, так как есть не во всех версиях. Смотри копирайт внутри файла.
+ */
+
 
 #include <Windows1251Encoding.h>
 #include <Poco/String.h>

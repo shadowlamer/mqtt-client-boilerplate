@@ -13,6 +13,13 @@
 // SPDX-License-Identifier:	BSL-1.0
 //
 
+/**
+ * @file Windows1251Encoding.h
+ * @brief Заголовочный файл для класса Poco::Windows1251Encoding
+ * Скопировано из библиотеки POCO, так как есть не во всех версиях. Смотри копирайт внутри файла.
+ */
+
+
 
 #ifndef Foundation_Windows1251Encoding_INCLUDED
 #define Foundation_Windows1251Encoding_INCLUDED
@@ -24,7 +31,11 @@
 
 namespace Poco {
 
-
+/**
+ * @class Windows1251Encoding Windows1251Encoding.h
+ * @sa Poco::TextEncoding
+ * @sa Poco::TextConverter
+ */
 class Foundation_API Windows1251Encoding: public TextEncoding
 	/// Windows Codepage 1251 text encoding.
 	/// Based on: http://msdn.microsoft.com/en-us/goglobal/cc305144

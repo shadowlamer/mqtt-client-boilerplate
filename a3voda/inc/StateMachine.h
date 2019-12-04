@@ -1,6 +1,10 @@
-//
-// Created by sl on 19.02.2019.
-//
+/**
+ * @file StateMachine.h
+ * @brief Заголовочный файл для класса StateMachine.
+ * @author Vadim Cherenev
+ * @date 19.02.2019
+ * @copyright MIT License
+ */
 
 #ifndef MQTT_CLIENT_STATEMACHINE_H
 #define MQTT_CLIENT_STATEMACHINE_H
@@ -9,6 +13,10 @@
 #include <chrono>
 using namespace std::chrono;
 
+/**
+ * @class StateMachine StateMachine.h
+ * @brief Базовый класс конечного автомата.
+ */
 class StateMachine {
 private:
     long timer = 0;

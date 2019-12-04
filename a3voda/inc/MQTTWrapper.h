@@ -1,3 +1,11 @@
+/**
+ * @file MQTTWrapper.h
+ * @brief Заголовочный файл для класса MQTTWrapper.
+ * @author Vadim Cherenev
+ * @date 21.02.2019
+ * @copyright MIT License
+ */
+
 #ifndef MQTT_CLIENT_MQTT_WRAPPER_H
 #define MQTT_CLIENT_MQTT_WRAPPER_H
 
@@ -14,8 +22,18 @@
 using namespace std;
 using namespace Poco;
 
+/**
+ * @brief QOS для отправки сообщений.
+ * 0 - доставка не гарантируется
+ * 1 - сообщение будет доставлено минимум один раз
+ * 2 - сообение будет доставлено ровно один раз
+ */
 #define QOS 2
 
+/**
+ * @class MQTTWrapper MQTTWrapper.h
+ * @brief Содержит методы для отправки и получения MQTT сообщений.
+ */
 class MQTTWrapper : public mosqpp::mosquittopp {
 public:
     MQTTWrapper(const char* id, const char* host, int port, vector<string> topics = {});
